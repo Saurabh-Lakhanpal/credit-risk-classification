@@ -6,7 +6,7 @@ This project leverages machine learning techniques to analyze historical lending
 
 ## Solution:
   - [`credit_risk_classification.ipynb`]()
-  - [`Report`]()
+  - [Overview of the Analysis](#overview-of-the-analysis)
   - [`lending_data.csv`]()
 
 ---
@@ -48,32 +48,57 @@ Answer this question:
 
 ## Overview of the Analysis
 
-* Explain the purpose of the analysis.
-* Explain what financial information the data was on, and what you needed to predict.
-* Provide basic information about the variables you were trying to predict (e.g., `value_counts`).
-* Describe the stages of the machine learning process you went through as part of this analysis.
-* Briefly touch on any methods you used (e.g., `LogisticRegression`, or any other algorithms).
+The purpose of this analysis was to use machine learning to predict credit risk based on borrowers' financial data. The dataset included information such as:
+- Loan size
+- Interest rate
+- Borrower income
+- Debt-to-income ratio
+- Number of credit accounts
+- Derogatory credit marks
+- Total outstanding debt
+
+The target variable, `loan_status`, classified loans as either:
+- **0** = Healthy loan
+- **1** = High-risk loan.
+
+Despite an imbalanced dataset (approximately 97% healthy loans and 3% high-risk loans), we successfully developed a logistic regression model to predict loan risk.
+
+Key stages of the machine learning process included:
+1. Preprocessing and feature selection.
+2. Splitting data into training and testing sets.
+3. Training and testing a logistic regression model.
+4. Evaluating model performance through accuracy, precision, recall, and F1 scores.
+
+---
 
 ## Results
 
-Using bulleted lists, describe the accuracy scores and the precision and recall scores of all machine learning models.
+Using a logistic regression model, we achieved the following performance metrics:
 
-* Machine Learning Model 1:
-    * Description of Model 1 Accuracy, Precision, and Recall scores.
+- **Accuracy Score:** 0.99 (99% of predictions were correct overall).
+- **Precision:** 
+  - **Healthy loan (`0`)**: 1.00 (no false positives for healthy loans).
+  - **High-risk loan (`1`)**: 0.84 (some false positives for high-risk loans).
+- **Recall:**
+  - **Healthy loan (`0`)**: 0.99 (almost all healthy loans were correctly identified).
+  - **High-risk loan (`1`)**: 0.94 (most high-risk loans were correctly identified).
+- **F1 Score:**
+  - **Healthy loan (`0`)**: 1.00
+  - **High-risk loan (`1`)**: 0.89
+
+---
 
 ## Summary
 
-Summarize the results of the machine learning models, and include a recommendation on the model to use, if any. For example:
+The logistic regression model performed exceptionally well in identifying healthy loans and reasonably well in detecting high-risk loans. It is recommended for credit risk prediction due to:
+- High performance in accuracy and precision.
+- Simplicity and interpretability.
 
-* Which one seems to perform best? How do you know it performs best?
-* Does performance depend on the problem we are trying to solve? (For example, is it more important to predict the `1`'s, or predict the `0`'s? )
-
-If you do not recommend any of the models, please justify your reasoning.
+However, if accurately identifying high-risk loans is critical, additional techniques (e.g., using SMOTE to handle class imbalance or exploring more complex models like Random Forest or XGBoost) could be considered for further improvements.
 
 ---
 
 ## Resources
 - [scikit-learn Documentation](https://scikit-learn.org/stable/)
 - [Python Official Documentation](https://www.python.org/doc/)
-- [Seaborn for Data Visualization](https://seaborn.pydata.org/)
-
+- [Seaborn for Data Visualization](https://seaborn.pydata.org/)  
