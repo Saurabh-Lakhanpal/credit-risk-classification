@@ -5,9 +5,9 @@ This project leverages machine learning techniques to analyze historical lending
 ---
 
 ## Solution:
-  - [`credit_risk_classification.ipynb`]()
-  - [Overview of the Analysis](#overview-of-the-analysis)
-  - [`lending_data.csv`]()
+  - [`credit_risk_classification.ipynb`](https://github.com/Saurabh-Lakhanpal/credit-risk-classification/blob/main/credit_risk_classification.ipynb)
+  - [`Overview of the Analysis`](#overview-of-the-analysis)
+  - [`lending_data.csv`](https://github.com/Saurabh-Lakhanpal/credit-risk-classification/blob/main/Resources/lending_data.csv)
 
 ---
 
